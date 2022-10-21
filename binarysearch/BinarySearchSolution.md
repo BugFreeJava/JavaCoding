@@ -86,3 +86,39 @@
 3. Complexity
 	1. Time Cost: Since we use binary search, so it will be O(length) where length should be width * height of matrix
 	2. Space Cost: Since we do not use any extra space, so it will be O(1)
+
+#### Search in Rotated Sorted Array
+1. Clarification:
+	1. does this array has duplicate elements? No
+	2. is that possible this array is null or empty? No
+2. Solution:  
+	Looks like this array is not sorted totally, but this array is partially sorted. And based on the problem description, we could know, this array must like this:
+``` 
+	  /  
+	 /  
+	/  
+	      /  
+	     /  
+	    / 
+```
+	so this means if we do get mid, and use it compare with left and right, we could at least find one part which is sorted. 
+	1. set left = 0; right = length - 1
+	2. do while loop until left == right - 1  
+		1. get mid and compare nums[mid] to target, if matches, return;  
+		2. compare nums[mid] with nums[right]  
+			1. if nums[mid] < nums[right] means from mid to right part is sorted;  
+				1. if nums[mid] < target <= nums[right]: move left = mid + 1; Otherwise,  
+				2. move right = mid - 1;  
+			2. Otherwise, we know from left to mid is sorted  
+				1. if nums[left] <= target < nums[mid]: move right = mid - 1; Otherwise,  
+				2. move left = mid + 1;  
+	3. compare target with nums[left] and nums[right]
+3. Complexity
+	1. Time Cost: Since we use binary search, so it will be O(n) where n should be length of array
+	2. Space Cost: Since we do not use any extra space, so it will be O(1)
+
+#### Median of Two Sorted Arrays (check https://www.enjoyalgorithms.com/blog/median-of-two-sorted-arrays) 
+
+3. Complexity
+	1. Time Cost: Since we use binary search and recursive, so it will be O(log (m + n)) where n and m should be length of arrays
+	2. Space Cost: Since we use recursive, so it will be O(log m + n)
