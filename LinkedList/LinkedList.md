@@ -5,7 +5,7 @@
 2. The problem wants you to implement a new data structure and this struture's operations' time complexity should be O(1). Like get / put / delete operations have to be O(1)
 3. The problem needs some data structure like Stack / Queue / Deque, you should use Java LinkedList.
 
-#### Solution Tips
+### Solution Tips
 1. If the data structure provided by problem is LinkedList. Mostly, it needs you do something to a linkedlist, like find the middle node, delete a node or reorder it.
 ```
 - The Most important part for this condition is NEVER LOSE CONTROL OF HEAD NODE. Using a dummy head points
